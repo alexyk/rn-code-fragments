@@ -34,7 +34,7 @@ export default class TopBarTwoButtonsBody extends Component {
             <Text style={{color:'white',backgroundColor:'green'}}>Right</Text>
           </View>
       )
-  }
+    }
   }
   
   
