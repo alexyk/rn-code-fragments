@@ -9,32 +9,32 @@ export default class TopBarTwoButtonsBody extends Component {
         return (
           <View style={[
             {
-               backgroundColor:'red', width:50,height:30,
-               alignSelf:'center',    justifyContent:'space-around',
-               alignItems:'center',   flexDirection:'row',
-               borderWidth:1
-             }
-           ]}>
-             <View style={{backgroundColor:'white',width:5,height:5}}/>
-             <Text style={{color:'white',backgroundColor:'green'}}>Left</Text>
-           </View>
+              backgroundColor:'red', width:50,height:30,
+              alignSelf:'center',   justifyContent:'space-around',
+              alignItems:'center',    flexDirection:'row',
+              borderWidth:1
+            }
+          ]}>
+            <View style={{backgroundColor:'white',width:5,height:5}}/>
+            <Text style={{color:'white',backgroundColor:'green'}}>Left</Text>
+          </View>
         )
         
     case 'right':
       return (
           <View style={[
-             {
-               backgroundColor:'blue', width:70,height:30,
-               alignSelf:'center',     justifyContent:'space-around',
-               alignItems:'center',    flexDirection:'row',
-               borderWidth:1
-             }
-           ]}>
-             <View style={{backgroundColor:'pink',width:5,height:5}}/>           
-             <Text style={{color:'white',backgroundColor:'green'}}>Right</Text>
-           </View>
+            {
+              backgroundColor:'blue', width:70,height:30,
+              alignSelf:'center',   justifyContent:'space-around',
+              alignItems:'center',    flexDirection:'row',
+              borderWidth:1
+            }
+          ]}>
+            <View style={{backgroundColor:'pink',width:5,height:5}}/>         
+            <Text style={{color:'white',backgroundColor:'green'}}>Right</Text>
+          </View>
       )
-   }
+    }
   }
   
   
