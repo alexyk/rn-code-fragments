@@ -1,0 +1,68 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww20580\viewh12160\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs32 \cf0 Steps for upgrading RN version
+\b0\fs24 \
+\
+
+\b \
+1.1. Automatically\
+\pard\pardeftab720\partightenfactor0
+
+\b0 \cf0 Use rn-diff patch - get, and prepare using the instructions in USAGE.md\
+Lastly - apply the patch using:\
+
+\i 	git apply upgrade-rn.patch --exclude=package.json -p 2 --3way
+\i0\b \
+\
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 1.2. Manually\
+\
+1.2.1. Create empty projects with \ul old\ulnone  and \ul new\ulnone  versions and the same name
+\b0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \ul \ulc0 Example\ulnone :\
+
+\i 	react-native init MyApp  --verbose --version react-native@0.55.4\
+	mv MyApp a\
+	react-native init MyApp  --verbose --version react-native@0.59.10\
+	mv MyApp b\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\i0\b \cf0 \
+
+\b0 Notice - not including 
+\i node_modules
+\i0 , 
+\i scr/ etc. - 
+\i0 these are simply deleted before creating the patch
+\b \
+\
+1.2.2. Create patch\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\b0 \cf0 	
+\i diff -x '.DS_Store' -ur  -- a/  b/ > rn-update.patch
+\i0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\
+1.2.3. Use separate screens for additional outlook
+\b0 \
+\
+	Screen 1		55.4-real ->. 59.10		(direct)\
+	Screen 2		55.4 -> 59.10			(clean)\
+	Screen 3		55.4 -> 55.4-real		(proto)\
+\
+\
+\
+}
