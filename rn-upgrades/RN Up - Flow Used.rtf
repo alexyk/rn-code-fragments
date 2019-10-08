@@ -1,11 +1,13 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Monaco;\f2\fnil\fcharset0 Menlo-Regular;
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Monaco;
 }
-{\colortbl;\red255\green255\blue255;\red242\green242\blue242;\red0\green0\blue0;\red180\green36\blue25;
-\red47\green180\blue29;\red46\green174\blue187;\red27\green29\blue31;\red235\green236\blue237;}
-{\*\expandedcolortbl;;\csgray\c95825;\csgray\c0\c85000;\cssrgb\c76410\c21699\c12524;
-\cssrgb\c20239\c73899\c14948;\cssrgb\c20198\c73241\c78251;\cssrgb\c14118\c15294\c16078;\cssrgb\c93725\c94118\c94510;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww15600\viewh13300\viewkind0
+{\colortbl;\red255\green255\blue255;\red140\green211\blue254;\red23\green23\blue23;\red242\green242\blue242;
+\red0\green0\blue0;\red180\green36\blue25;\red47\green180\blue29;\red46\green174\blue187;\red27\green29\blue31;
+\red235\green236\blue237;}
+{\*\expandedcolortbl;;\cssrgb\c61176\c86275\c99608;\cssrgb\c11765\c11765\c11765;\csgray\c95825;
+\csgray\c0\c85000;\cssrgb\c76410\c21699\c12524;\cssrgb\c20239\c73899\c14948;\cssrgb\c20198\c73241\c78251;\cssrgb\c14118\c15294\c16078;
+\cssrgb\c93725\c94118\c94510;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww16120\viewh13580\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\b\fs32 \cf0 Steps for upgrading RN version
@@ -67,88 +69,113 @@ Lastly - apply the patch using:\
 	Screen 2		55.4 -> 59.10			(clean)\
 	Screen 3		55.4 -> 55.4-real		(proto)\
 \
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b \cf0 4. Apply patch\
+\b 4. Apply patch\
 \
 5. Fix any iOS or Android specific project issues
 \b0 \
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-\cf0 \
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\
 
-\b \cf0 6. Dependencies update
+\b 6. Dependencies update
 \b0 \
-Using ncu - u and then reverting versions as followsl:\
-	react native - to 59.10\
-	react - to 16.8.3\
-	react-native-fast-image - to 6.1.1\
-Additional installations\
-	react-native-gesture-handler\
-	react-native-webview\
-	react-timer-mixin\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \ul Using\ulnone  
+\i ncu - u
+\i0  and then \ul reverting versions\ulnone  as follows:\
+	react-native@59.10\
+	react@16.8.3\
+	react-native-fast-image@6.1.1\
+	react-native-image-picker@0.28.0\
+	react-native-fontawesome@5.7.0 (vs 6.0.1 - changed font names)\
+	(react-navigation-redux-helpers@2.0.9 instead of @3.0.2 - because of 
+\f1\fs20 \cf2 \cb3 \expnd0\expndtw0\kerning0
+reduxifyNavigator
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0  becoming 
+\f1\fs20 \cf2 \cb3 \expnd0\expndtw0\kerning0
+createReduxContainer
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 )\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \ul Additional installations\ulnone \
+	react-native-reanimated@1.1.0\
+	react-native-gesture-handler@1.3.0\
+	react-native-webview@5.12.1\
+	react-timer-mixin@0.13.2\
+	@babel/runtime\
+	@babel/plugin-proposal-decorators\
+\ul Added and removed\ulnone  in favor of react-native-fontawesome@5.7.0\
+	react-native-svg\
+	@fortawesome/react-native-fontawesome@0.1.0\
+	@fortawesome/fontawesome-svg-core@1.2.20\
+	@fortawesome/free-solid-svg-icons@5.10.0\
+	@fortawesome/free-brands-svg-icons@5.10.0\
+	@fortawesome/free-regular-svg-icons@5.10.0\
 	\
-	\
+\ul Git repo changes\ulnone :\
+	react-native-smart-splash-screen v2.3.6 (used from my own fork github repo)\
+\
+\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\f1\fs20 \cf2 \cb3 \CocoaLigature0 apisauce                                   0.15.2  \uc0\u8594     \cf4 1.0.3\cf2  \
- axios                                      0.18.0  \uc0\u8594    0.\cf4 19.0\cf2  \
- babel-plugin-transform-decorators-legacy    1.3.4  \uc0\u8594     1.3.\cf5 5\cf2  \
- buffer                                      5.1.0  \uc0\u8594     5.\cf6 2.1\cf2  \
- card-validator                              5.0.0  \uc0\u8594     \cf4 6.2.0\cf2  \
- immutability-helper                         2.7.1  \uc0\u8594     \cf4 3.0.1\cf2  \
- javascript-time-ago                        1.0.30  \uc0\u8594     \cf4 2.0.1\cf2  \
- lodash                                    4.17.10  \uc0\u8594   4.17.\cf5 15\cf2  \
- moment                                     2.22.1  \uc0\u8594    2.\cf6 24.0\cf2  \
- prop-types                                 15.6.1  \uc0\u8594    15.\cf6 7.2\cf2  \
- query-string                                6.1.0  \uc0\u8594     6.\cf6 8.2\cf2  \
- react                                      16.8.3  \uc0\u8594    16.8.\cf5 6\cf2  \
- react-native                              0.59.10  \uc0\u8594    0.\cf4 60.4\cf2  \
- react-mixin                                 2.0.2  \uc0\u8594     \cf4 5.0.0\cf2  \
- react-native-background-fetch               2.0.8  \uc0\u8594     2.\cf6 6.1\cf2  \
- react-native-cardview                       1.1.5  \uc0\u8594     \cf4 2.0.2\cf2  \
- react-native-dash                           0.0.8  \uc0\u8594     0.0.\cf4 9\cf2  \
- react-native-easy-toast                     1.1.0  \uc0\u8594     1.\cf6 2.0\cf2  \
- react-native-fast-image                     5.1.1  \uc0\u8594     \cf4 7.0.2\cf2  \
- react-native-fbsdk                          0.8.0  \uc0\u8594    0.\cf4 10.1\cf2  \
- react-native-fontawesome                    5.7.0  \uc0\u8594     \cf4 6.0.1\cf2  \
- react-native-image-picker                  0.27.1  \uc0\u8594     \cf4 1.0.1\cf2  \
- react-native-image-resizer                  1.0.0  \uc0\u8594     1.0.\cf5 1\cf2  \
- react-native-iphone-x-helper                1.0.2  \uc0\u8594     1.\cf6 2.1\cf2  \
- react-native-keyboard-aware-scroll-view     0.7.2  \uc0\u8594     0.\cf4 8.0\cf2  \
- react-native-maps                          0.22.1  \uc0\u8594    0.\cf4 25.0\cf2  \
- react-native-masked-text                    1.7.2  \uc0\u8594    1.\cf6 12.4\cf2  \
- react-native-modal-datetime-picker          5.1.0  \uc0\u8594     \cf4 7.5.0\cf2  \
- react-native-phone-input                    0.2.1  \uc0\u8594     0.2.\cf4 4\cf2  \
- react-native-picker-select                  3.0.1  \uc0\u8594     \cf4 6.3.0\cf2  \
- react-native-remote-svg                     1.3.0  \uc0\u8594     \cf4 2.0.6\cf2  \
- react-native-simple-toast                   0.0.8  \uc0\u8594     0.\cf4 1.1\cf2  \
- react-native-tab-view                       1.3.1  \uc0\u8594     \cf4 2.9.0\cf2  \
- react-native-typography                     1.3.0  \uc0\u8594     1.\cf6 4.1\cf2  \
- react-native-uuid-generator                 4.0.0  \uc0\u8594     \cf4 6.0.0\cf2  \
- react-native-vector-icons                   6.0.2  \uc0\u8594     6.\cf6 6.0\cf2  \
- react-navigation                           2.18.3  \uc0\u8594    \cf4 3.11.1\cf2  \
- react-navigation-redux-helpers              2.0.8  \uc0\u8594     \cf4 3.0.2\cf2  \
- react-redux                                 5.0.7  \uc0\u8594     \cf4 7.1.0\cf2  \
- react-simple-dropdown                       3.2.0  \uc0\u8594     3.2.\cf5 3\cf2  \
- react-stomp                                 3.2.0  \uc0\u8594     \cf4 4.1.1\cf2  \
- react-switch                                2.3.2  \uc0\u8594     \cf4 5.0.1\cf2  \
- redux                                       3.7.2  \uc0\u8594     \cf4 4.0.4\cf2  \
- redux-actions                               2.6.1  \uc0\u8594     2.6.\cf5 5\cf2  \
- redux-thunk                                 2.2.0  \uc0\u8594     2.\cf6 3.0\cf2  \
- rfc4648                                     1.1.0  \uc0\u8594     1.\cf6 2.1\cf2  \
- shortid                                     2.2.8  \uc0\u8594    2.2.\cf5 14\cf2  \
- sockjs-client                               1.1.4  \uc0\u8594     1.\cf6 3.0\cf2  \
- babel-eslint                                8.2.3  \uc0\u8594    \cf4 10.0.2\cf2  \
- eslint                                     4.19.1  \uc0\u8594     \cf4 6.1.0\cf2  \
- eslint-config-airbnb                       16.1.0  \uc0\u8594    \cf4 17.1.1\cf2  \
- eslint-plugin-import                       2.11.0  \uc0\u8594    2.\cf6 18.2\cf2  \
- eslint-plugin-jsx-a11y                      6.0.3  \uc0\u8594     6.\cf6 2.3\cf2  \
- eslint-plugin-react                         7.7.0  \uc0\u8594    7.\cf6 14.3\cf2  \
- jest                                       22.4.2  \uc0\u8594    \cf4 24.8.0\cf2  \
- react-test-renderer                        16.8.3  \uc0\u8594    16.8.\cf5 6\cf2  \
- redux-devtools-extension                   2.13.5  \uc0\u8594    2.13.\cf5 8\cf2  \
- reactotron-react-native                     3.5.1  \uc0\u8594     3.\cf6 6.4\cf2  \
+\f2\fs20 \cf4 \cb5 \CocoaLigature0 apisauce                                   0.15.2  \uc0\u8594     \cf6 1.0.3\cf4  \
+ axios                                      0.18.0  \uc0\u8594    0.\cf6 19.0\cf4  \
+ babel-plugin-transform-decorators-legacy    1.3.4  \uc0\u8594     1.3.\cf7 5\cf4  \
+ buffer                                      5.1.0  \uc0\u8594     5.\cf8 2.1\cf4  \
+ card-validator                              5.0.0  \uc0\u8594     \cf6 6.2.0\cf4  \
+ immutability-helper                         2.7.1  \uc0\u8594     \cf6 3.0.1\cf4  \
+ javascript-time-ago                        1.0.30  \uc0\u8594     \cf6 2.0.1\cf4  \
+ lodash                                    4.17.10  \uc0\u8594   4.17.\cf7 15\cf4  \
+ moment                                     2.22.1  \uc0\u8594    2.\cf8 24.0\cf4  \
+ prop-types                                 15.6.1  \uc0\u8594    15.\cf8 7.2\cf4  \
+ query-string                                6.1.0  \uc0\u8594     6.\cf8 8.2\cf4  \
+ react                                      16.8.3  \uc0\u8594    16.8.\cf7 6\cf4  \
+ react-native                              0.59.10  \uc0\u8594    0.\cf6 60.4\cf4  \
+ react-mixin                                 2.0.2  \uc0\u8594     \cf6 5.0.0\cf4  \
+ react-native-background-fetch               2.0.8  \uc0\u8594     2.\cf8 6.1\cf4  \
+ react-native-cardview                       1.1.5  \uc0\u8594     \cf6 2.0.2\cf4  \
+ react-native-dash                           0.0.8  \uc0\u8594     0.0.\cf6 9\cf4  \
+ react-native-easy-toast                     1.1.0  \uc0\u8594     1.\cf8 2.0\cf4  \
+ react-native-fast-image                     5.1.1  \uc0\u8594     \cf6 7.0.2\cf4  \
+ react-native-fbsdk                          0.8.0  \uc0\u8594    0.\cf6 10.1\cf4  \
+ react-native-fontawesome                    5.7.0  \uc0\u8594     \cf6 6.0.1\cf4  \
+ react-native-image-picker                  0.27.1  \uc0\u8594     \cf6 1.0.1\cf4  \
+ react-native-image-resizer                  1.0.0  \uc0\u8594     1.0.\cf7 1\cf4  \
+ react-native-iphone-x-helper                1.0.2  \uc0\u8594     1.\cf8 2.1\cf4  \
+ react-native-keyboard-aware-scroll-view     0.7.2  \uc0\u8594     0.\cf6 8.0\cf4  \
+ react-native-maps                          0.22.1  \uc0\u8594    0.\cf6 25.0\cf4  \
+ react-native-masked-text                    1.7.2  \uc0\u8594    1.\cf8 12.4\cf4  \
+ react-native-modal-datetime-picker          5.1.0  \uc0\u8594     \cf6 7.5.0\cf4  \
+ react-native-phone-input                    0.2.1  \uc0\u8594     0.2.\cf6 4\cf4  \
+ react-native-picker-select                  3.0.1  \uc0\u8594     \cf6 6.3.0\cf4  \
+ react-native-remote-svg                     1.3.0  \uc0\u8594     \cf6 2.0.6\cf4  \
+ react-native-simple-toast                   0.0.8  \uc0\u8594     0.\cf6 1.1\cf4  \
+ react-native-tab-view                       1.3.1  \uc0\u8594     \cf6 2.9.0\cf4  \
+ react-native-typography                     1.3.0  \uc0\u8594     1.\cf8 4.1\cf4  \
+ react-native-uuid-generator                 4.0.0  \uc0\u8594     \cf6 6.0.0\cf4  \
+ react-native-vector-icons                   6.0.2  \uc0\u8594     6.\cf8 6.0\cf4  \
+ react-navigation                           2.18.3  \uc0\u8594    \cf6 3.11.1\cf4  \
+ react-navigation-redux-helpers              2.0.8  \uc0\u8594     \cf6 3.0.2\cf4  \
+ react-redux                                 5.0.7  \uc0\u8594     \cf6 7.1.0\cf4  \
+ react-simple-dropdown                       3.2.0  \uc0\u8594     3.2.\cf7 3\cf4  \
+ react-stomp                                 3.2.0  \uc0\u8594     \cf6 4.1.1\cf4  \
+ react-switch                                2.3.2  \uc0\u8594     \cf6 5.0.1\cf4  \
+ redux                                       3.7.2  \uc0\u8594     \cf6 4.0.4\cf4  \
+ redux-actions                               2.6.1  \uc0\u8594     2.6.\cf7 5\cf4  \
+ redux-thunk                                 2.2.0  \uc0\u8594     2.\cf8 3.0\cf4  \
+ rfc4648                                     1.1.0  \uc0\u8594     1.\cf8 2.1\cf4  \
+ shortid                                     2.2.8  \uc0\u8594    2.2.\cf7 14\cf4  \
+ sockjs-client                               1.1.4  \uc0\u8594     1.\cf8 3.0\cf4  \
+ babel-eslint                                8.2.3  \uc0\u8594    \cf6 10.0.2\cf4  \
+ eslint                                     4.19.1  \uc0\u8594     \cf6 6.1.0\cf4  \
+ eslint-config-airbnb                       16.1.0  \uc0\u8594    \cf6 17.1.1\cf4  \
+ eslint-plugin-import                       2.11.0  \uc0\u8594    2.\cf8 18.2\cf4  \
+ eslint-plugin-jsx-a11y                      6.0.3  \uc0\u8594     6.\cf8 2.3\cf4  \
+ eslint-plugin-react                         7.7.0  \uc0\u8594    7.\cf8 14.3\cf4  \
+ jest                                       22.4.2  \uc0\u8594    \cf6 24.8.0\cf4  \
+ react-test-renderer                        16.8.3  \uc0\u8594    16.8.\cf7 6\cf4  \
+ redux-devtools-extension                   2.13.5  \uc0\u8594    2.13.\cf7 8\cf4  \
+ reactotron-react-native                     3.5.1  \uc0\u8594     3.\cf8 6.4\cf4  \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 \cb1 \CocoaLigature1 \
@@ -162,8 +189,9 @@ Additional installations\
 \i \cf0 	npm --depth 9999 update
 \i0 \
 or	
-\f2\fs26 \cf7 \cb8 \expnd0\expndtw0\kerning0
+\f1\fs26 \cf9 \cb10 \expnd0\expndtw0\kerning0
 npm outdated\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 or	npm audit\
 updates packages\
@@ -176,8 +204,9 @@ updates packages\
 
 \i \cf0 	npm install -g npm-ckeck-updates\
 	ncu -u\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\i0 \
+\i0 \cf0 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \b \cf0 Extra 3:
